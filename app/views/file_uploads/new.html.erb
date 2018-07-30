@@ -1,0 +1,15 @@
+<h1>Upload for post
+  <%= @post.title %>
+</h1>
+
+<h4 class="progress" style="display: none">Progress:
+  <span class="progress_count"></span>%</h4>
+
+<%= form_with model: @post, url: post_file_uploads_path(@post), method: :post, local: true, id: "upload_file" do |f| %>
+  <%= f.file_field :files, multiple: true, direct_upload: true %>
+    <br />
+    <br />
+    <%= f.submit 'Upload' %>
+<% end %>
+
+

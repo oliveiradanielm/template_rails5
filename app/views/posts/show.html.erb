@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @post.message %>
+</p>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
+<%= link_to 'Upload Files', new_post_file_upload_path(@post) %>
+
+<h5>Files</h5>
+
+<ul>
+  <% @post.files.each do |file| %>
+    <li>
+      <%= link_to file.filename, url_for(file) %>
+      <%= link_to "X", post_file_upload_path(@post, file), method: :delete, data: { confirm: "Tem certeza?" } %>
+    </li>
+    <% end %>
+</ul>
