@@ -1,0 +1,10 @@
+pt-BR:
+  activerecord:
+    models:
+      post:
+        one: Postagem
+        other: Postagens
+    attributes:
+      post:
+        title: Título
+        message: Mensagem
