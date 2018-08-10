@@ -151,6 +151,8 @@ en:
       create: Create %{model}
       submit: Save %{model}
       update: Update %{model}
+    links:
+      back: Back
   number:
     currency:
       format:

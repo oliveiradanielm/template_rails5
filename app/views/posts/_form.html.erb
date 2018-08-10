@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-  <h4 class="ui dividing header">Shipping Information</h4>
+
   <div class="five fields">
     <div class="field">
       <%= form.label :title %>
@@ -25,6 +25,6 @@
 
   <div class="actions">
     <%= form.submit nil, class: 'ui primary button' %>
-    <%= link_to 'Voltar', posts_path, class: 'ui button right floated' %>
+    <%= link_to t('helpers.links.back'), posts_path, class: 'ui button right floated' %>
   </div>
 <% end %>
