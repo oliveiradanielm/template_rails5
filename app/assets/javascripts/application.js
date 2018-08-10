@@ -11,17 +11,25 @@
 // about supported directives.
 //
 //= require jquery
+//= require bootstrap/dist/js/bootstrap
+//= require semantic-ui-css/semantic.min
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
 //= require_tree .
 
-$(document).on("turbolinks:load", function () {
-  $("#upload_file").on("direct-uploads:start", function () {
+var ready = function() {
+	$("#upload_file").on("direct-uploads:start", function () {
     $("h4.progress").show();
   });
 
   $("#post_files").on("direct-upload:progress", function (event) {
     $("h4.progress span.progress_count").html(event.detail.progress);
   });
-});
+}
+
+if (Turbolinks.supported) {
+  $(document).on("turbolinks:load", ready);
+} else {
+  $(document).ready(ready);
+}

@@ -10,6 +10,17 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "Your_filename",
+        template: "posts/show.html.erb",
+        zoom:                           5,
+        grayscale:                      false,
+        lowquality:                     false,
+        layout: 'pdf.html'
+      end
+    end
   end
 
   # GET /posts/new

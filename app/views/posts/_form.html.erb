@@ -1,4 +1,4 @@
-<%= form_with(model: post, local: true) do |form| %>
+<%= form_with(model: post, local: true, html: { class: 'ui form' }) do |form| %>
   <% if post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
@@ -10,18 +10,21 @@
       </ul>
     </div>
   <% end %>
+  <h4 class="ui dividing header">Shipping Information</h4>
+  <div class="five fields">
+    <div class="field">
+      <%= form.label :title %>
+      <%= form.text_field :title, placeholder: 'Título' %>
+    </div>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :message %>
-    <%= form.text_field :message %>
+    <div class="field">
+      <%= form.label :message %>
+      <%= form.text_field :message %>
+    </div>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit nil, class: 'ui primary button' %>
+    <%= link_to 'Voltar', posts_path, class: 'ui button right floated' %>
   </div>
 <% end %>
