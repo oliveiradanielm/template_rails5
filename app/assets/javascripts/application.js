@@ -11,8 +11,8 @@
 // about supported directives.
 //
 //= require jquery
-//= require bootstrap/dist/js/bootstrap
 //= require semantic-ui-css/semantic.min
+//= require semantic-ui-css/components/dropdown.min.js
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
@@ -26,6 +26,8 @@ var ready = function() {
   $("#post_files").on("direct-upload:progress", function (event) {
     $("h4.progress span.progress_count").html(event.detail.progress);
   });
+
+  $('select.dropdown').dropdown();
 }
 
 if (Turbolinks.supported) {
