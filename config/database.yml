@@ -20,7 +20,7 @@ test:
   password: 123456
   host: 127.0.0.1
 
-development:
+production:
   <<: *default
   schema_search_path: app_rails
   database: danieloliveira
