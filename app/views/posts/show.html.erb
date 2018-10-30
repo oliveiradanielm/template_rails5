@@ -19,7 +19,7 @@
 <ul>
   <% @post.files.each do |file| %>
     <li>
-      <%= link_to file.blob.filename, url_for(filename) %>
+      <%= link_to file.blob.filename, url_for(file) %>
       <%= link_to '<i class="fa fa-trash"></i>'.html_safe, post_file_upload_path(@post, file), method: :delete, data: { confirm: "Tem certeza?" } %>
     </li>
     <% end %>
